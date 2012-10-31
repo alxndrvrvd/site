@@ -13,11 +13,28 @@
 			{
 				for($i = 0; $i != count($data); $i++)
 				{
-					if(strlen($data[$i][$language . "_text"]) > MAX_LENGTH)
+					if(parent::$language === 'ua')
 					{
-						$text = substr($data[$i][$language . "_text"], 0, MAX_LENGTH);
+						mb_internal_encoding("UTF-8");
+						
+						$len = mb_strlen($data[$i][$language . "_text"]);
 
-						$data[$i][$language . "_text"] = $text . "...";
+						if($len > MAX_LENGTH)
+						{
+							$text = mb_substr($data[$i][$language . "_text"], 0, MAX_LENGTH);
+							$data[$i][$language . "_text"] = $text . "...";
+						}
+					}
+					else
+					{
+						$len = strlen($data[$i][$language . "_text"]);
+
+						if($len > MAX_LENGTH)
+						{
+							$text = substr($data[$i][$language . "_text"], 0, MAX_LENGTH);
+
+							$data[$i][$language . "_text"] = $text . "...";
+						}
 					}
 				}
 			}

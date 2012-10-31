@@ -2,11 +2,10 @@
 	if(is_array($data))	{
 		for($i = 0; $i != count($data); $i++) { ?>
 
-			<form action=<?php echo "/site/" . $lang . "/profiles/save"?> 
-				method="post">
+			<form action="<?php echo "/site/" . $lang . "/profiles/save"?>" method="post">
 				<table>
 					<tr>
-						<td><img src=<?="../" . $data[$i]['avatar'] ?> 
+						<td><img src="<?="../" . $data[$i]['avatar']?>" alt="avatar" 
 							height="150" width="150" />
 						</td>
 						<td>
@@ -29,7 +28,7 @@
 								<?=$this->form_2['blocked']?> <br/>
 							<input type="submit" name="edit" 
 								value="<?=$this->form_2[save_button]?>" /> <br/>
-							<input type="hidden" name="id" value=<?php echo $data[$i]['id'] ?> />
+							<input type="hidden" name="id" value="<?=$data[$i]['id']?>" />
 						</td>
 					</tr>
 				</table>

@@ -1,6 +1,6 @@
 		<table align="center" border="1">
 			<tr>
-				<td colspan="2"><img src=<?="../" . $_SESSION['avatar'] ?> 
+				<td colspan="2"><img src="<?="../" . $_SESSION['avatar']?>" 
 					width="150" height="150" />
 				</td>
 				<td>
@@ -16,17 +16,20 @@
 				</td>
 			</tr>
 			<tr>
-				<form action=<?="/site/" . $lang . "/profile/edit"?> 
-					method="post">
+				<form action="<?="/site/" . $lang . "/profile/edit"?>" method="post">
 					<td colspan="2" align="center">
-						<input type="submit" name="edit" 
-							value="<?=$this->form_2[edit_button]?>" /></td>
+						<div>
+							<input type="submit" name="edit" value="<?=$this->form_2[edit_button]?>" />
+						</div>
+					</td>
 				</form>
-				<form action=<?="/site/" . $lang . "/profile/delete"?>
+				<form action="<?="/site/" . $lang . "/profile/delete"?>"
 				 method="post">
 					<td colspan="2" align="center">
-						<input type="submit" name="delete" 
-							value="<?=$this->form_2[delete_button]?>" /></td>
+						<div>
+							<input type="submit" name="delete" value="<?=$this->form_2[delete_button]?>" />
+						</div>
+					</td>
 				</form>
 			</tr>
 		</table>

@@ -1,6 +1,6 @@
-		<form action=<?="/site/" . $lang . "/profile/save"?> 
+		<form action="<?="/site/" . $lang . "/profile/save"?>" 
 			method="post" enctype="multipart/form-data">
-			<table align="center">
+			<table style="margin:0 auto 0 auto">
 				<tr>
 					<td><?=$this->form_2['new_login']?></td>
 					<td><input type="text" name="login" /></td>

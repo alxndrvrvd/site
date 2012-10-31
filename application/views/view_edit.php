@@ -1,4 +1,4 @@
-		<form action=<?="/site/" . $lang . "/edit/save"?> method="post">
+		<form action="<?="/site/" . $lang . "/edit/save"?>" method="post">
 		<table>
 			<tr>
 				<td>
@@ -14,7 +14,7 @@
 				<td align="center">
 					<input type="submit" name="save" 
 						value="<?=$this->form_2[save_button]?>"/>
-					<input type="hidden" name="article_id" value=<?=$data[0]['id']?>>
+					<input type="hidden" name="article_id" value="<?=$data[0]['id']?>"/>
 				</td>
 			</tr>
 		</table>
