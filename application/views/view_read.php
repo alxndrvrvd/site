@@ -1,4 +1,4 @@
-	<table width="780" align="center">
+	<table width="780" style="margin:0 auto 0 auto">
 		<tr>
 			<td colspan="2" align="center">
 				<h2><?=$article[0][$lang . '_header']?></h2>
@@ -21,7 +21,6 @@
 			</td>
 		</tr>
 		<?php } ?>
-<!--//////////////////////////////////////////////////////////////////////////////-->
 		<tr>
 			<td colspan="2" align="justify"><?=$article[0][$lang . '_text']?></td>
 		</tr>
@@ -34,20 +33,20 @@
 					&& ($_SESSION['status'] === 'redaction' || $_SESSION['status'] === 'admin')){ ?>
 		<tr>
 			<!-- //////////////////////////EDIT ARTICLE BUTTON//////////////////////////////// -->
-			<form action="<?="/site/" . $lang . "/edit"?>" method="post">
 			<td align="center">
-				<div><input type="submit" name="edit" value="<?=$this->form_2[edit_article_button]?>"/></div>
-				<div><input type="hidden" name="article_id" value="<?=$article[0]['id']?>"/></div>
+			<form action="<?="/site/" . $lang . "/edit"?>" method="post"><div>
+				<input type="submit" name="edit" value="<?=$this->form_2[edit_article_button]?>"/>
+				<input type="hidden" name="article_id" value="<?=$article[0]['id']?>"/>
+			</div></form>
 			</td>
-			</form>
 			<!-- ////////////////////////////////////////////////////////////////////////////////
 			/////////////////////////DELETE ARTICLE BUTTON//////////////////////////////////// -->
-			<form action="<?="/site/" . $lang . "/edit/delete"?>" method="post">
 			<td align="center">
-				<div><input type="submit" name="delete" value="<?=$this->form_2[delete_article_button]?>"/></div>
-				<div><input type="hidden" name="article_id" value="<?=$article[0]['id']?>"/></div>
+			<form action="<?="/site/" . $lang . "/edit/delete"?>" method="post"><div>
+				<input type="submit" name="delete" value="<?=$this->form_2[delete_article_button]?>"/>
+				<input type="hidden" name="article_id" value="<?=$article[0]['id']?>"/>
+			</div></form>
 			</td>
-			</form>
 			<!-- ///////////////////////////////////////////////////////////////////////////// -->
 		</tr>
 		<?php } ?>
@@ -87,11 +86,16 @@
 		<?php } ?>
 		<!-- ////////////////////////////////////COMMENTS///////////////////////////////////// -->
 		<?php if(!empty($comments)) { ?>
-		<tr><td colspan="2"><h3 style="text-align:center"><?=$this->form_2['comment_message']?></h3></td></tr>
+		<tr>
+			<td colspan="2">
+				<h3 style="text-align:center"><?=$this->form_2['comment_message']?></h3>
+			</td>
+		</tr>
 		<?php } ?>
 		<?php for($i = 0; $i != count($comments); $i++) { ?>
 		<?php if(!empty($comments[$i]['comment_theme_' . $lang])) { ?>
 		<tr>
+			<td colspan="2">
 			<table align="center" width="600">
 				<tr>
 					<td colspan="2" align="center"><?=$comments[$i]['comment_theme_' . $lang]?></td>
@@ -118,15 +122,18 @@
 				</tr>
 				<!-- ///////////////////////////////////////////////////////////////////////// -->
 			</table>
+			</td>
 		</tr>
 		<?php } ?>
 		<?php } ?>
 		<!--//////////////////////////////////////////////////////////////////////////////////
 		//////////////////////////////////////ADD COMMENT///////////////////////////////////// -->	
 		<tr>
+			<td colspan="2">
 			<?php if(isset($_SESSION['login'])) { ?>
+			
 			<form action="<?="/site/" . $lang . "/read/add_comment"?>" method="post">
-			<table border="1" align="center">
+			<table border="1" style="margin:0 auto 0 auto">
 				<tr>
 					<td align="center"><h3><?=$this->form_2['add_comment']?></h3></td>
 				</tr>
@@ -141,15 +148,16 @@
 					</td>
 				</tr>
 				<tr>
-					<td align="center"><div><input type="submit" name="add" 
+					<td align="center"><input type="submit" name="add" 
 							value="<?=$this->form_2[send_button]?>"/>
 						<input type="hidden" name="article_id" value="<?=$article[0]['id']?>"/>
-						<input type="hidden" name="author" value="<?=$_SESSION['login']?>"/></div>
+						<input type="hidden" name="author" value="<?=$_SESSION['login']?>"/>
 					</td>
 				</tr>
 			</table>
 			</form>
 			<?php } ?>
+			</td>
 		</tr>
 		<!--///////////////////////////////////////////////////////////////////////////////// -->
 	</table>

@@ -10,6 +10,13 @@
 		{
 			session_start();
 
+			if($_SESSION['status'] === 'blocked')
+			{
+				$_SESSION = array();
+				session_destroy();
+				exit("<h1 style=color:red> Account is blocked! </h1>");
+			}
+
 			if($sign_in == 'view_user')
 				$this->form_1 = self::$lang_array['view_user'];
 			else
@@ -24,6 +31,13 @@
 		public function displayReadPage($sign_in, $content, $data, $lang)
 		{
 			session_start();
+
+			if($_SESSION['status'] === 'blocked')
+			{
+				$_SESSION = array();
+				session_destroy();
+				exit("<h1 style=color:red> Account is blocked! </h1>");
+			}
 			
 			if($sign_in == 'view_user')
 				$this->form_1 = self::$lang_array['view_user'];
@@ -43,6 +57,13 @@
 		{
 			session_start();
 
+			if($_SESSION['status'] === 'blocked')
+			{
+				$_SESSION = array();
+				session_destroy();
+				exit("<h1 style=color:red> Account is blocked! </h1>");
+			}
+
 			if($sign_in == 'view_user')
 				$this->form_1 = self::$lang_array['view_user'];
 			else
@@ -57,6 +78,13 @@
 
 		public function displayAddPage($sign_in, $content, $data, $lang)
 		{
+			if($_SESSION['status'] === 'blocked')
+			{
+				$_SESSION = array();
+				session_destroy();
+				exit("<h1 style=color:red> Account is blocked! </h1>");
+			}
+
 			if($sign_in == 'view_user')
 				$this->form_1 = self::$lang_array['view_user'];
 			else
@@ -70,6 +98,13 @@
 
 		public function displayRegisterForm($sign_in, $content, $lang)
 		{
+			if($_SESSION['status'] === 'blocked')
+			{
+				$_SESSION = array();
+				session_destroy();
+				exit("<h1 style=color:red> Account is blocked! </h1>");
+			}
+
 			if($sign_in == 'view_user')
 				$this->form_1 = self::$lang_array['view_user'];
 			else
@@ -85,6 +120,13 @@
 		{
 			session_start();
 
+			if($_SESSION['status'] === 'blocked')
+			{
+				$_SESSION = array();
+				session_destroy();
+				exit("<h1 style=color:red> Account is blocked! </h1>");
+			}
+
 			$this->form_1 = self::$lang_array['view_user'];
 
 			$this->form_2 = self::$lang_array['view_profile'];
@@ -97,6 +139,13 @@
 		{
 			session_start();
 
+			if($_SESSION['status'] === 'blocked')
+			{
+				$_SESSION = array();
+				session_destroy();
+				exit("<h1 style=color:red> Account is blocked! </h1>");
+			}
+
 			$this->form_1 = self::$lang_array['view_user'];
 
 			$this->form_2 = self::$lang_array['view_edit_profile'];
@@ -108,6 +157,13 @@
 		public function displayUsersProfiles($sign_in, $content, $data, $lang)
 		{
 			session_start();
+
+			if($_SESSION['status'] === 'blocked')
+			{
+				$_SESSION = array();
+				session_destroy();
+				exit("<h1 style=color:red> Account is blocked! </h1>");
+			}
 
 			$this->form_1 = self::$lang_array['view_user'];
 

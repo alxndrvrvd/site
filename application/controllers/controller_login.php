@@ -18,14 +18,14 @@
 				else
 				{
 					$_SESSION['login_status'] = 'Login or password was not entered';
-					header("Location: " . $url);
+					exit(header("Location: " . $url));
 				}
 				
 				$users_data = $this->model->check_login($login);
 
 				if(!$users_data)
 				{
-					$_SESSION['login_status'] = 'User with such login is not exist or not registered';
+					$_SESSION['login_status'] = 'User with such login is not registered';
 					header("Location: " . $url);
 				}
 				elseif(is_array($users_data))
